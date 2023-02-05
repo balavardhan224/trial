@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React,{createContext,useState} from 'react'
 
-function App() {
+import Count from './Count'
+import Display from './Display'
+
+export const appoi= createContext()
+const App = () => {
+  const [data,setData]=useState([
+    {
+      brand: "sam"
+    },
+    {
+      brand: "vivo"
+    },
+    {
+      brand: "1+"
+    }
+  ]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <appoi.Provider value={[data,setData]}>
+        <div>
+          <Count/>
+          <Display/>
+        </div>
+    </appoi.Provider>
+    
+  )
 }
 
-export default App;
+export default App

@@ -11,3 +11,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.Link{
+  margin: 12px;
+  padding: 10px;
+  background-color: orange;
+  color: white;
+  text-decoration: none;
+}
